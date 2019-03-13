@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: ADYoG4Bnfo1qBWbh/FGIA57fOJKMmze9VtPxUfaFm2DZZKbdRNLNyzVJ7rAFLrqKosid+GGsBFcsiwpIEfhSicOomZ9WHhOx0zDkjpMOd8bsdSQQAgg4/22eM8+WQ1gGdpVjDeoTybeBwOdLNslGWUjgvge7xlDeSvyqD8Le2aXvA4gKeq39bT4mXBxGVJ0DKogZp0yDtQw9pDwphg3ntW00W474Rbk4jbsLnA2XbYLUo0OvR81KEQwfVLGLHQcSko76tYbaFHF6pJ/osjgpvDFAUksDDZWwpBSwVaspbO3exFh5Y9CsLpLnJ3xsyIJx7I9N23hDft/ExtNvSmvkErso4CAMpQ+M8gOSLbQ1PQmGm2hI6yVo7F/joGowAfNvPnQI8FH5FaHgc9X75yvFwvezo6S8Lh7L6RIaGznryN5VKUW9zKQQCnA3/Y9kGEAv2sXr2RmpavJeqbBMU98u8/dDYJa2xaIl9/qMx/5d7PxQgP1P6nmDlrAKXy9E3R4xUUxBjtjMOCETfv2aWpD0xVZFsybeCV0ukPF2G9A8DjShY2D7h5heBZHAC4PhQlfOZ6RW121jlhlyr0V/+6fDqhkGM28epdiW4EsufUAi4OQXPx9DGDYewjS5JRvE8KohARCmfkVDMgs/R05WcBvmt5+q3lH3izhrpCtIUJrVj8E=
+  app: book-keeper-client
+  on:
+    repo: oscaralexander2125/book-keeper-client
