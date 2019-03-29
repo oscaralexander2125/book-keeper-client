@@ -1,38 +1,22 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import {required, nonEmpty, isTrimmed} from '../validators';
+import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import {fetchAddBook} from '../actions';
+import {fetchUpdateBook} from '../actions'
 
-export class AddBook extends React.Component {
+export class UpdateBook extends React.Component {
   onSubmit(values) {
-    return this.props.dispatch(fetchAddBook(values))
-
+    values.id=this.props.id
+    return this.props.dispatch(fetchUpdateBook(values, this.props.id))
   }
-
   render() {
+    console.log(this.props.id)
+    console.log(this.props.book)
     return (
-      <form className='add-book-form'
+      <form className='update-form'
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
       >
-        <label htmlFor='name' className='form-label'>Title</label>
-        <Field
-            component={Input}
-            type='text'
-            name='name'
-            id='name'
-            validate={[required, nonEmpty]}
-        />
-        <label htmlFor='author' className='form-label'>Author</label>
-        <Field
-            component={Input}
-            type='text'
-            name='author'
-            id='author'
-        />
-        <label htmlFor='status' className='form-label'>Status</label>
-        <Field name='status' component='select' id='status'>
+      <label htmlFor='status' className='form-label'>Status</label>
+        <Field name='status' component='select' id='status' defaultValue={this.props.book.status}>
           <option></option>
           <option value='unread'>Unread</option>
           <option value='read'>Read</option>
@@ -61,13 +45,17 @@ export class AddBook extends React.Component {
             Private
           </label>
         </div>
-        <button disabled={this.props.pristine || this.props.submitting}>Add book</button>
+        <button disabled={this.props.pristine || this.props.submitting}>Update</button>
       </form>
     )
-  }
+  } 
 }
 
+const mapStateToProps = (state, props) => ({
+  id: state.books.id,
+  book: state.books.updateBook
+})
+
 export default reduxForm({
-  form: 'add-book',
-  //onSubmit: (error, dispatch) => dispatch()
-})(connect()(AddBook));
+  form: 'update-book'
+})(connect(mapStateToProps)(UpdateBook));

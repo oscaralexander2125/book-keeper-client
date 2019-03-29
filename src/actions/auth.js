@@ -35,21 +35,21 @@ export const authError = error => ({
 
 const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
+  saveAuthToken(authToken);
   dispatch(setAuthToken(authToken));
   dispatch(authSuccess(decodedToken.user));
-  saveAuthToken(authToken);
 }
 
-export const login = (email, password) => dispatch => {
+export const login = (username, password) => dispatch => {
   dispatch(authRequest());
   return (
-    fetch(`${API_BASE_URL}/auth/login`, {
+    fetch(`${API_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email,
+        username,
         password
       })
     })
@@ -59,7 +59,7 @@ export const login = (email, password) => dispatch => {
     .catch(err => {
       const {code} = err;
       const message = 
-        code ===401
+        code === 401
           ? 'Incorrect email or password'
           : 'Unable to login, please try again';
       dispatch(authError(err));
