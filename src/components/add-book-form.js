@@ -7,6 +7,7 @@ import {fetchAddBook} from '../actions';
 
 export class AddBook extends React.Component {
   onSubmit(values) {
+    console.log(values)
     return this.props.dispatch(fetchAddBook(values))
 
   }
@@ -32,7 +33,7 @@ export class AddBook extends React.Component {
             id='author'
         />
         <label htmlFor='status' className='form-label'>Status</label>
-        <Field name='status' component='select' id='status'>
+        <Field name='status' component='select' id='status' validate={[required, nonEmpty]}>
           <option></option>
           <option value='unread'>Unread</option>
           <option value='read'>Read</option>

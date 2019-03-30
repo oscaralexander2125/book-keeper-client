@@ -8,15 +8,29 @@ export class UpdateBook extends React.Component {
     values.id=this.props.id
     return this.props.dispatch(fetchUpdateBook(values, this.props.id))
   }
-  render() {
-    console.log(this.props.id)
+
+  componentDidMount() {
     console.log(this.props.book)
+    
+  }
+
+  render() {
+    //console.log(this.props.book)
+    let error
+    if(this.props.error) {
+      error = (
+      <div className='form-error' aria-live='polite'>
+        {this.props.error}
+      </div>
+      )
+    }
+
     return (
       <form className='update-form'
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
       >
       <label htmlFor='status' className='form-label'>Status</label>
-        <Field name='status' component='select' id='status' defaultValue={this.props.book.status}>
+        <Field name='status' component='select' id='status' >
           <option></option>
           <option value='unread'>Unread</option>
           <option value='read'>Read</option>
@@ -32,6 +46,7 @@ export class UpdateBook extends React.Component {
               component="input"
               type="radio"
               value="public"
+              //checked={this.props.book.public == 'public'}
             />{' '}
             Public
           </label>
@@ -41,6 +56,7 @@ export class UpdateBook extends React.Component {
               component="input"
               type="radio"
               value="private"
+              //checked={this.props.book.public == 'private'}
             />{' '}
             Private
           </label>
@@ -53,9 +69,12 @@ export class UpdateBook extends React.Component {
 
 const mapStateToProps = (state, props) => ({
   id: state.books.id,
-  book: state.books.updateBook
+  book: state.books.updateBook,
+  //public: state.books.updateBook.public
 })
 
 export default reduxForm({
   form: 'update-book'
 })(connect(mapStateToProps)(UpdateBook));
+
+//

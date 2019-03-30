@@ -3,18 +3,16 @@ import {Route, NavLink} from 'react-router-dom';
 import SignUpForm from './signUpForm';
 import LoginForm from './loginForm';
 
-export default class LoginPage extends React.Component {
-  
-  render() {
-    return (
+export default function LoginPage() {
+   
+  return (
+    <div>
       <div>
-        <div>
-          <NavLink to = '/'>Sign In</NavLink>
-          <NavLink to = '/sign-up'>Sign Up</NavLink>
-        </div>
-        <Route exact path = '/' component={LoginForm}></Route>
-        <Route exact path = '/sign-up' component={SignUpForm}></Route>
+        <NavLink to = '/'>Sign In</NavLink>
+        <NavLink to = '/sign-up'>Sign Up</NavLink>
       </div>
-    )
-  }
-} 
+      <Route exact path = '/' component={LoginForm} />
+      <Route exact path = '/sign-up' component={SignUpForm} />
+    </div>
+  )
+}

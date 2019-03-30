@@ -9,7 +9,6 @@ import UpdateBook from './update-book';
 export default class LandingPage extends React.Component {
 
   render() {
-    console.log(this.props)
     const ReadRoute = (props) => {
       return (
         <Books {...props} status={"read"} />
@@ -30,15 +29,14 @@ export default class LandingPage extends React.Component {
       <div>
         <NavBar />
         <SideBar />
-        <Route exact path={`${this.props.match.path}/read`} render={ReadRoute}></Route>
-        <Route exact path={`${this.props.match.path}/un-read`} render={UnreadRoute} ></Route>
-        <Route exact path={`${this.props.match.path}/in-process`} render={Reading} ></Route>
-        <Route exact path={`${this.props.match.path}/add-book`} component={AddBook}></Route>
-        <Route exact path={`${this.props.match.path}/update`} component={UpdateBook}></Route>
+        <Route exact path={`${this.props.match.path}/read`} render={ReadRoute} />
+        <Route exact path={`${this.props.match.path}/un-read`} render={UnreadRoute} />
+        <Route exact path={`${this.props.match.path}/in-process`} render={Reading} />
+        <Route path={`${this.props.match.path}/add-book`} component={AddBook} />
+        <Route path={`${this.props.match.path}/update`} component={UpdateBook} />
       </div>
     )
   }
 }
 
-//this.props.history.push inside update method
-//
+

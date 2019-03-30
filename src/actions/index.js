@@ -57,10 +57,11 @@ export const updateBook = (update, id) => ({
 })
 
 export const fetchBooks = (stage) => dispatch => {
+  //console.log(localStorage.Bearer)
   dispatch(fetchRequest())
   return fetch (`${API_BASE_URL}/api/books?status=${stage}`, {
     headers: {
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${localStorage.Bearer}`
     }
   })
   .then(res => {
@@ -70,6 +71,7 @@ export const fetchBooks = (stage) => dispatch => {
     return res.json();
   })
   .then(books => {
+    dispatch(fetchSuccess())
     dispatch(getBooks(books));
   })
   .catch(err => {
@@ -95,6 +97,7 @@ export const fetchAddBook = (book) => dispatch => {
   })
   .then(addedBook => {
     console.log('success')
+    dispatch(fetchSuccess())
     dispatch(addBook(addedBook))
   })
   .catch(err => {
@@ -119,6 +122,7 @@ export const fetchUpdateBook = (update, id) => dispatch => {
     return res.json();
   })
   .then(update => {
+    dispatch(fetchSuccess())
     console.log(update)
   })
   .catch(err => {
@@ -143,6 +147,7 @@ export const fetchDeleteBook = id => dispatch => {
   })
   .then(deletedBook => {
     console.log(deletedBook)
+    dispatch(fetchSuccess())
     dispatch(deleteBook(deletedBook))
   })
 }

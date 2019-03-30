@@ -5,10 +5,15 @@ import {fetchBooks} from '../actions';
 
 export class Books extends React.Component {
   componentDidMount() {
+    console.log('books component in didmount method')
     this.props.dispatch(fetchBooks(this.props.status))
+    
   }
 
   render() {
+    if (this.props.loading || this.props.authLoading) {
+      return <p>Loading...</p>
+    }
     console.log(this.props)
     const bookList = this.props.books.map((book, index) => (
       <div key={index}>
@@ -18,10 +23,6 @@ export class Books extends React.Component {
         />
       </div>
     )) 
-
-    if (this.props.loading) {
-      return <p>Loading...</p>
-    }
 
     return (
       <div className='list-books'>
@@ -35,7 +36,8 @@ export class Books extends React.Component {
 
 const mapStateToProps = (state, props) => ({
   books: state.books.books,
-  loading: state.books.loading
+  loading: state.books.loading,
+  authLoading: state.auth.loading
 })
 
 export default connect(mapStateToProps)(Books);
