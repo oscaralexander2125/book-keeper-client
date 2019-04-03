@@ -3,6 +3,7 @@ import {NavLink, Redirect} from 'react-router-dom';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from'../local-storage';
 import {connect} from 'react-redux';
+import './navbar.css';
 
 export class NavBar extends React.Component {
   removeAuthToken() {
@@ -12,7 +13,7 @@ export class NavBar extends React.Component {
   render() {
     let logOut;
     //if(this.props.user) {
-      logOut = <NavLink to='/' onClick={() => this.removeAuthToken()}>Log Out</NavLink>
+      logOut = <NavLink to='/' className='logout-link' onClick={() => this.removeAuthToken()}>Log Out</NavLink>
     /*} else {
       //logOut = <Redirect to='/' />
     }*/
@@ -22,7 +23,7 @@ export class NavBar extends React.Component {
   
     return (
       <div className='nav-bar'>
-        <NavLink to='/books/add-book'>Add Book</NavLink>
+        <NavLink to='/books/add-book' className='add-book-link'>Add Book</NavLink>
         {logOut}
       </div>
     )

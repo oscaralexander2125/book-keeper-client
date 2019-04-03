@@ -17,7 +17,9 @@ export class Book extends React.Component {
 
   render() {
     console.log(this.props)
-    return (
+    let book;
+    if (this.props.match.path === '/books/public') {
+      book = 
       <div>
         <h2>
           {this.props.name}
@@ -28,8 +30,26 @@ export class Book extends React.Component {
         <p>
           {this.props.review}
         </p>
-        <button onClick={(e) => this.updateBook(e)} > Update </button>
-        <button data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
+      </div>
+    } else {
+      book = 
+        <div>
+          <h2>
+            {this.props.name}
+          </h2>
+          <p>
+            {this.props.author}
+          </p>
+          <p>
+            {this.props.review}
+          </p>
+          <button onClick={(e) => this.updateBook(e)} > Update </button>
+          <button data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
+        </div>
+    }
+    return (
+      <div>
+        {book}
       </div>
     )
   }

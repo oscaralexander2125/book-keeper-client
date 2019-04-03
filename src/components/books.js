@@ -1,17 +1,24 @@
 import React from 'react';
 import Book from './book';
 import {connect} from 'react-redux';
-import {fetchBooks} from '../actions';
+import {fetchBooks, fetchPublicBooks} from '../actions';
 
 export class Books extends React.Component {
   componentDidMount() {
-    console.log('books component in didmount method')
-    this.props.dispatch(fetchBooks(this.props.status))
-    
+    console.log(this.props.status)
+    if(this.props.status === 'public') {
+      console.log('hi')
+      return this.props.dispatch(fetchPublicBooks(this.props.status))
+    } else {
+        console.log('books component in didmount method')
+        return this.props.dispatch(fetchBooks(this.props.status))
+  
+    }
   }
 
   render() {
-    if (this.props.loading || this.props.authLoading) {
+    const upperCase = this.props.status.charAt(0).toUpperCase() + this.props.status.slice(1);
+    if (this.props.loading) {
       return <p>Loading...</p>
     }
     console.log(this.props)
@@ -26,9 +33,10 @@ export class Books extends React.Component {
 
     return (
       <div className='list-books'>
-        <ul>
+        <h2>{upperCase}</h2>
+        <div>
           {bookList}
-        </ul>
+        </div>
       </div>
     )
   }

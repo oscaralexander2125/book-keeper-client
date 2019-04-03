@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {loadAuthToken} from '../local-storage';
+
 const token = loadAuthToken();
 
 export const FETCH_REQUEST =  'FETCH_REQUEST';
@@ -60,6 +61,28 @@ export const fetchBooks = (stage) => dispatch => {
   //console.log(localStorage.Bearer)
   dispatch(fetchRequest())
   return fetch (`${API_BASE_URL}/api/books?status=${stage}`, {
+    headers: {
+      'Authorization': `Bearer ${localStorage.Bearer}`
+    }
+  })
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  })
+  .then(books => {
+    dispatch(fetchSuccess())
+    dispatch(getBooks(books));
+  })
+  .catch(err => {
+    dispatch(fetchError(err));
+  });
+}
+
+export const fetchPublicBooks = book => dispatch => {
+  dispatch(fetchRequest())
+  return fetch (`${API_BASE_URL}/api/books/${book}`, {
     headers: {
       'Authorization': `Bearer ${localStorage.Bearer}`
     }

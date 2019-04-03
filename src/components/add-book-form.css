@@ -1,34 +1,35 @@
-.sign-in-div {
-  margin: 25px 10px 20px
+.add-book {
+  text-align: center;
+  margin: 40px 0;
 }
 
-.form-label {
+.add-book-label {
   display: block;
-  margin: 10px 0px 5px;
+  margin: 14px 0 2px;
 }
 
-.form-input label {
-  margin: 0;
+.radio-public {
+  margin: 7px 0px;
+  padding: 4px 0px;
 }
 
-#email, #password {
+#author, #name, #review, #status {
   padding: 4px 7px;
   border: 2px solid #cacaca;
   border-radius: 2px;
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(221, 221, 221);
   transition: box-shadow .25s, background-color .5s;
   font-size: 16px;
 }
 
-#email:focus, #password:focus {
+#author:focus, #name:focus, #review:focus, #status:focus {
   box-shadow: 3px 4px 7px -1px;
   background-color: rgb(255, 255, 255);
 }
 
-.login-submit {
-  font-size: 16px;
+.add-button {
   margin: 15px 0 4px;
-  padding: 7px 15px;
+  padding: 9px 25px;
   border: 1px solid whitesmoke;
   border-radius: 4px;
   transition: background-color .5s;
@@ -36,11 +37,7 @@
   box-shadow: 1px 2px 3px lightgrey;
 }
 
-.login-submit:hover {
+.add-button:hover {
   cursor: pointer;
-  background-color: rgb(240, 240, 247)
-}
-
-.form-error {
-  color: red;
+  background-color: rgb(235, 235, 243)
 }

@@ -25,15 +25,25 @@ export default class LandingPage extends React.Component {
       )                  
     }
 
+    const Public = (props) => {
+      return (
+        <Books {...props} status={'public'} />
+      )                  
+    }
+
     return (
-      <div>
-        <NavBar />
-        <SideBar />
-        <Route exact path={`${this.props.match.path}/read`} render={ReadRoute} />
-        <Route exact path={`${this.props.match.path}/un-read`} render={UnreadRoute} />
-        <Route exact path={`${this.props.match.path}/in-process`} render={Reading} />
-        <Route path={`${this.props.match.path}/add-book`} component={AddBook} />
-        <Route path={`${this.props.match.path}/update`} component={UpdateBook} />
+      <div className='landing-page-div'>
+        
+          <SideBar />
+        
+        
+          <Route exact path={`${this.props.match.path}/read`} render={ReadRoute} />
+          <Route exact path={`${this.props.match.path}/un-read`} render={UnreadRoute} />
+          <Route exact path={`${this.props.match.path}/in-process`} render={Reading} />
+          <Route exact path={`${this.props.match.path}/public`} render={Public} />
+          <Route exact path={`${this.props.match.path}/add-book`} component={AddBook} />
+          <Route path={`${this.props.match.path}/update`} component={UpdateBook} />
+        
       </div>
     )
   }
