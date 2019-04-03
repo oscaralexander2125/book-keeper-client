@@ -38,11 +38,11 @@ export default class LandingPage extends React.Component {
         
         
           <Route exact path={`${this.props.match.path}/read`} render={ReadRoute} />
-          <Route exact path={`${this.props.match.path}/un-read`} render={UnreadRoute} />
+          <Route exact path={`${this.props.match.path}/unread`} render={UnreadRoute} />
           <Route exact path={`${this.props.match.path}/in-process`} render={Reading} />
           <Route exact path={`${this.props.match.path}/public`} render={Public} />
           <Route exact path={`${this.props.match.path}/add-book`} component={AddBook} />
-          <Route path={`${this.props.match.path}/update`} component={UpdateBook} />
+          <Route exact path={`${this.props.match.path}/update`} component={UpdateBook} />
         
       </div>
     )

@@ -1,7 +1,6 @@
 import {API_BASE_URL} from '../config';
-import {loadAuthToken} from '../local-storage';
-
-const token = loadAuthToken();
+import {Redirect} from 'react-router-dom';
+import React from 'react';
 
 export const FETCH_REQUEST =  'FETCH_REQUEST';
 export const fetchRequest = () => ({
@@ -107,7 +106,7 @@ export const fetchAddBook = (book) => dispatch => {
   return fetch(`${API_BASE_URL}/api/books`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': `Bearer ${localStorage.Bearer}`,
        'Content-Type': 'application/json'
     },
     body: JSON.stringify(book)
@@ -133,7 +132,7 @@ export const fetchUpdateBook = (update, id) => dispatch => {
   return fetch(`${API_BASE_URL}/api/books/${id}`, {
     method: 'PUT',
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': `Bearer ${localStorage.Bearer}`,
       'Content-Type': 'application/json'
     },
     body:JSON.stringify(update)
@@ -158,7 +157,7 @@ export const fetchDeleteBook = id => dispatch => {
   return fetch(`${API_BASE_URL}/api/books/${id}`,{
     method: 'DELETE',
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': `Bearer ${localStorage.Bearer}`,
       'Content-Type': 'application/json'
     }
   })

@@ -9,7 +9,6 @@
 .side-bar {
   border-bottom: 1px solid #eaeaeb;
   text-align: right;
-  height: 70px;
   line-height: 70px;
 }
 
@@ -49,6 +48,7 @@
   }
 
   .menu {
+    border-top: 1px solid #eaeaeb;
     text-align: center;
     width: 100%;
     display: none;

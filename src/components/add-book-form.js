@@ -16,6 +16,7 @@ export class AddBook extends React.Component {
   render() {
     return (
       <div className='add-book'>
+        <h2 className='add-book-title'>Add a Book</h2>
         <form className='add-book-form'
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
         >

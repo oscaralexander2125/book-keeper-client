@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, initialize} from 'redux-form';
 import {connect} from 'react-redux';
 import {fetchUpdateBook} from '../actions';
 import './update-book.css';
@@ -7,13 +7,19 @@ import './update-book.css';
 export class UpdateBook extends React.Component {
   onSubmit(values) {
     values.id=this.props.id
-    return this.props.dispatch(fetchUpdateBook(values, this.props.id))
+    const bookStatus = this.props.updateBook.status
+    this.props.dispatch(fetchUpdateBook(values, this.props.id))
+    this.props.history.push(`/books/${bookStatus}`)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     //console.log(this.props.book)
-    //this.props.initialize({review:this.props.book.review})
-    
+    //this.handleInitialize();
+  }
+
+  handleInitialize() {
+    const initData = {review:this.props.updateBook.review};
+    this.props.initialize(initData)
   }
 
   render() {
@@ -29,6 +35,7 @@ export class UpdateBook extends React.Component {
 
     return (
       <div className='update-book'>
+        <h2 className='update-title'>Update Book</h2>
         <form className='update-form'
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
         >
@@ -65,7 +72,7 @@ export class UpdateBook extends React.Component {
               Private
             </label>
           </div>
-          <button disabled={this.props.pristine || this.props.submitting}>Update</button>
+          <button className='update-button' disabled={this.props.pristine || this.props.submitting}>Update</button>
         </form>
       </div>
     )
@@ -74,12 +81,14 @@ export class UpdateBook extends React.Component {
 
 const mapStateToProps = (state, props) => ({
   id: state.books.id,
-  book: state.books.updateBook,
+  updateBook: state.books.updateBook
   //public: state.books.updateBook.public
 })
 
 export default reduxForm({
-  form: 'update-book'
+  form: 'update-book',
+  //enableReinitialize: true,
+
 })(connect(mapStateToProps)(UpdateBook));
 
 //css: responsive, images

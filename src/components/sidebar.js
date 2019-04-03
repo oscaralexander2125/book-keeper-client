@@ -35,21 +35,19 @@ export class SideBar extends React.Component {
     }
 
     return (
-      <nav className='side-bar'>
-        <div className='burger-icon'>
+        <div className='burger-icon side-bar'>
           <h2 className='title-burger'>One Book</h2>
           <label className='burger-label' htmlFor='toggle'>&#9776;</label>
           <input type='checkbox' id='toggle' />
           <div className='menu'>
             <Link to='/books/read' className='menuLink'>Read</Link>
-            <Link to='/books/un-read' className='menuLink'>Unread</Link>
+            <Link to='/books/unread' className='menuLink'>Unread</Link>
             <Link to='/books/in-process' className='menuLink'>Reading</Link>
             <Link to='/books/public' className='menuLink'>Public Books</Link>
             <Link to='/books/add-book' className='menuLink'>Add Book</Link>
             {logOut}
           </div>
         </div>
-      </nav>
     )
   }
 }
