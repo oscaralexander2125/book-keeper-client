@@ -13,8 +13,8 @@ export default function LoginPage() {
         <span className='navLink'><NavLink to = '/' className='pageSwitcher1'>Sign In</NavLink></span>
         <span className='navLink'><NavLink to = '/sign-up' className='pageSwitcher2'>Sign Up</NavLink></span>
       </div>
-      <Route exact path = '/' component={LoginForm} />
-      <Route exact path = '/sign-up' component={SignUpForm} />
+      <Route exact path='/' component={LoginForm} />
+      <Route exact path='/sign-up' component={SignUpForm} />
     </div>
   )
 }

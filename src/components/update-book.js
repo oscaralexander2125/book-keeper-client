@@ -1,25 +1,26 @@
 import React from 'react';
 import {Field, reduxForm, initialize} from 'redux-form';
 import {connect} from 'react-redux';
-import {fetchUpdateBook} from '../actions';
+import {fetchUpdateBook, updateBook} from '../actions';
 import './update-book.css';
 
 export class UpdateBook extends React.Component {
   onSubmit(values) {
     values.id=this.props.id
-    const bookStatus = this.props.updateBook.status
+    const bookStatus = values.status || this.props.updateBook.status
     this.props.dispatch(fetchUpdateBook(values, this.props.id))
     this.props.history.push(`/books/${bookStatus}`)
   }
 
   componentDidMount() {
-    //console.log(this.props.book)
+    //console.log(this.props.updateBook)
     //this.handleInitialize();
   }
 
-  handleInitialize() {
-    const initData = {review:this.props.updateBook.review};
-    this.props.initialize(initData)
+  load(book) {
+    /*const initData = {review:this.props.updateBook.review};
+    this.props.initialize(initData)*/
+    this.props.initialize({review:book.review, status:book.status, public:book.public});
   }
 
   render() {
@@ -36,6 +37,7 @@ export class UpdateBook extends React.Component {
     return (
       <div className='update-book'>
         <h2 className='update-title'>Update Book</h2>
+        <div><button className='info-button' type="button" onClick={() => this.load(this.props.updateBook)}>Load Info</button></div>
         <form className='update-form'
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
         >
@@ -82,16 +84,9 @@ export class UpdateBook extends React.Component {
 const mapStateToProps = (state, props) => ({
   id: state.books.id,
   updateBook: state.books.updateBook
-  //public: state.books.updateBook.public
 })
 
 export default reduxForm({
   form: 'update-book',
-  //enableReinitialize: true,
 
 })(connect(mapStateToProps)(UpdateBook));
-
-//css: responsive, images
-//space with containers
-//loading values into update form
-//hamburger

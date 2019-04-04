@@ -9,22 +9,7 @@ export class SideBar extends React.Component {
   removeAuthToken() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
-  }
-
-  /*<ul className='side-bar-list'>
-          <li>
-            <NavLink to='/books/read'>Read</NavLink>
-          </li>
-          <li>
-            <NavLink to='/books/un-read'>Unread</NavLink>
-          </li>
-          <li>
-            <NavLink to='/books/in-process'>Reading</NavLink>
-          </li>
-          <li>
-            <NavLink to='/books/public'>Public Books</NavLink>
-          </li>
-        </ul>*/ 
+  } 
   
   render () {
     let logOut;

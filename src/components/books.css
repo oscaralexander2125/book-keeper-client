@@ -1,0 +1,29 @@
+.list-books {
+  margin: 0 8px;
+}
+
+.book-title {
+  text-align: center;
+}
+
+.books-items {
+  width: 40.33%;
+  margin: 0px 3.5%;
+  display: inline-block;
+  text-align: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .books-items {
+    display: block;
+    width: 100%;
+    margin:0;
+  }
+}
+
+@media only screen and (min-width:651px) {
+  .books-items {
+    width: 33.33%;
+    margin: 0px;
+  }
+}

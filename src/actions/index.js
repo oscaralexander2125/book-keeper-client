@@ -50,10 +50,9 @@ export const bookId = id => ({
 })
 
 export const UPDATE_BOOK = 'UPDATE_BOOK';
-export const updateBook = (update, id) => ({
+export const updateBook = (update) => ({
   type:UPDATE_BOOK,
-  update,
-  id
+  update
 })
 
 export const fetchBooks = (stage) => dispatch => {

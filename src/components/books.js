@@ -2,6 +2,7 @@ import React from 'react';
 import Book from './book';
 import {connect} from 'react-redux';
 import {fetchBooks, fetchPublicBooks} from '../actions';
+import './books.css'
 
 export class Books extends React.Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ export class Books extends React.Component {
     }
     console.log(this.props)
     const bookList = this.props.books.map((book, index) => (
-      <div key={index}>
+      <div key={index} className={`book-item-${index} books-items`}>
         <Book 
           {...this.props}
           {...book}
@@ -33,8 +34,8 @@ export class Books extends React.Component {
 
     return (
       <div className='list-books'>
-        <h2>{upperCase}</h2>
-        <div>
+        <h2 className='book-title'>{upperCase}</h2>
+        <div className='bookList'>
           {bookList}
         </div>
       </div>

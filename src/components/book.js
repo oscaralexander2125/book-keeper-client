@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bookId, updateBook, fetchDeleteBook} from '../actions';
+import './book.css';
 
 export class Book extends React.Component {
   updateBook(e) {
-    this.props.dispatch(bookId(this.props.id))
     this.props.dispatch(updateBook(this.props))
+    this.props.dispatch(bookId(this.props.id))
     return this.props.history.push('/books/update')
   }
 
@@ -20,35 +21,35 @@ export class Book extends React.Component {
     let book;
     if (this.props.match.path === '/books/public') {
       book = 
-      <div>
-        <h2>
-          {this.props.name}
-        </h2>
+      <div className='book-item'>
+        <h3>
+          Title: {this.props.name}
+        </h3>
         <p>
-          {this.props.author}
+          Author: {this.props.author}
         </p>
         <p>
-          {this.props.review}
+          Review: {this.props.review}
         </p>
       </div>
     } else {
       book = 
-        <div>
-          <h2>
-            {this.props.name}
-          </h2>
+        <div className='book-item'>
+          <h3>
+            Title: {this.props.name}
+          </h3>
           <p>
-            {this.props.author}
+            Author: {this.props.author}
           </p>
           <p>
-            {this.props.review}
+            Review: {this.props.review}
           </p>
           <button onClick={(e) => this.updateBook(e)} > Update </button>
           <button data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
         </div>
     }
     return (
-      <div>
+      <div className='render-book'>
         {book}
       </div>
     )
