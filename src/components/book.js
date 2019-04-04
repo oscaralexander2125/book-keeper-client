@@ -44,8 +44,8 @@ export class Book extends React.Component {
           <p>
             Review: {this.props.review}
           </p>
-          <button onClick={(e) => this.updateBook(e)} > Update </button>
-          <button data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
+          <button className='book-button' onClick={(e) => this.updateBook(e)} > Update </button>
+          <button className='book-button' data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
         </div>
     }
     return (

@@ -6,7 +6,8 @@ body {
     sans-serif;
   /*-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;*/
-  background-color: rgb(150, 209, 236)
+  background-color: rgb(150, 209, 236);
+  /*background: url(http://istrosbooks.com/upload/2018/02/buecher-lineart_5a805ea412c6e.png)*/
 }
 
 /*code {

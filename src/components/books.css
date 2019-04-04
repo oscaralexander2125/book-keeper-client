@@ -4,11 +4,12 @@
 
 .book-title {
   text-align: center;
+  margin: 30px 0;
 }
 
 .books-items {
   width: 40.33%;
-  margin: 0px 3.5%;
+  margin: 0px 3.5% 20px;
   display: inline-block;
   text-align: center;
 }
@@ -17,13 +18,13 @@
   .books-items {
     display: block;
     width: 100%;
-    margin:0;
+    margin: 30px 0;
   }
 }
 
 @media only screen and (min-width:651px) {
   .books-items {
     width: 33.33%;
-    margin: 0px;
+    margin: 0 0 20px;
   }
 }
