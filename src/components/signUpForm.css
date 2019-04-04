@@ -1,0 +1,41 @@
+.sign-up-div {
+  margin: 25px 10px 20px
+}
+
+.form-label {
+  display: block;
+  margin: 10px 0px 5px;
+}
+
+.form-input label {
+  margin: 0;
+}
+
+#firstName, #lastName, #passwordConfirm, #password {
+  padding: 4px 7px;
+  border: 2px solid #cacaca;
+  border-radius: 2px;
+  background-color: rgb(241, 241, 241);
+  transition: box-shadow .25s, background-color .3s;
+  font-size: 16px;
+}
+
+#firstName:focus, #lastName:focus, #passwordConfirm:focus {
+  box-shadow: 3px 4px 7px -1px;
+  background-color: rgb(255, 255, 255);
+}
+
+.signup-submit {
+  margin: 15px 0 4px;
+  padding: 9px 25px;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  transition: background-color .5s;
+  text-shadow: 1px 1px #fdfdfd;
+  box-shadow: 1px 2px 3px lightgrey;
+}
+
+.signup-submit:hover {
+  cursor: pointer;
+  background-color: rgb(235, 235, 243)
+}

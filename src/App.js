@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Route, Switch, Redirect, BrowserRouter as Router} from 'react-router-dom';
+import {Provider} from 'react-redux';
 import './App.css';
+import store from './store'
+import LoginPage from'./components/login-page';
+import LandingPage from './components/landing-page';
+import ErrorRoute from './components/error-route';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div className="Ap">
+            <Switch>
+              <Redirect exact from='/' to='sign-in' />
+              <Route path='/sign-in' component={LoginPage} />
+              <Route path='/sign-up' component={LoginPage} />
+              <Route path='/books' component={LandingPage} />
+              <Route component={ErrorRoute} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
 
-export default App;
+//have all routes in one file

@@ -1,0 +1,56 @@
+.update-book {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.update-label {
+  display: block;
+  margin: 14px 0 2px;
+}
+
+#review, #status {
+  padding: 4px 7px;
+  border: 2px solid #cacaca;
+  border-radius: 2px;
+  background-color: rgb(221, 221, 221);
+  transition: box-shadow .25s, background-color .5s;
+  font-size: 16px;
+}
+
+#review:focus, #status:focus {
+  box-shadow: 3px 4px 7px -1px;
+  background-color: rgb(255, 255, 255);
+}
+
+.update-public {
+  margin: 7px 0px;
+  padding: 4px 0px;
+}
+
+.info-button {
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  transition: background-color .5s;
+  text-shadow: 1px 1px #fdfdfd;
+  box-shadow: 1px 2px 3px lightgrey;
+}
+
+.info-button:hover {
+  cursor: pointer;
+  background-color: rgb(235, 235, 243)
+}
+
+.update-button {
+  margin: 15px 0 4px;
+  padding: 9px 25px;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  transition: background-color .5s;
+  text-shadow: 1px 1px #fdfdfd;
+  box-shadow: 1px 2px 3px lightgrey;
+}
+
+.update-button:hover {
+  cursor: pointer;
+  background-color: rgb(235, 235, 243)
+}

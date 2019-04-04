@@ -1,0 +1,46 @@
+.sign-in-div {
+  margin: 25px 10px 20px
+}
+
+.form-label {
+  display: block;
+  margin: 10px 0px 5px;
+}
+
+.form-input label {
+  margin: 0;
+}
+
+#email, #password {
+  padding: 4px 7px;
+  border: 2px solid #cacaca;
+  border-radius: 2px;
+  background-color: rgb(241, 241, 241);
+  transition: box-shadow .25s, background-color .5s;
+  font-size: 16px;
+}
+
+#email:focus, #password:focus {
+  box-shadow: 3px 4px 7px -1px;
+  background-color: rgb(255, 255, 255);
+}
+
+.login-submit {
+  font-size: 16px;
+  margin: 15px 0 4px;
+  padding: 7px 15px;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  transition: background-color .5s;
+  text-shadow: 1px 1px #fdfdfd;
+  box-shadow: 1px 2px 3px lightgrey;
+}
+
+.login-submit:hover {
+  cursor: pointer;
+  background-color: rgb(240, 240, 247)
+}
+
+.form-error {
+  color: red;
+}
