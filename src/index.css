@@ -9,7 +9,7 @@ body {
   background-color: rgb(150, 209, 236);
   background-image: url(./images/book-image.png);
   background-size: 20%;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: bottom right;
   background-attachment: fixed;
   background-blend-mode: screen;
