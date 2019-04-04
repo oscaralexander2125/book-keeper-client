@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import NavBar from './navbar';
 import SideBar from './sidebar';
 import Books from './books';
 import AddBook from './add-book-form';

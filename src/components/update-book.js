@@ -1,7 +1,7 @@
 import React from 'react';
-import {Field, reduxForm, initialize} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import {fetchUpdateBook, updateBook} from '../actions';
+import {fetchUpdateBook} from '../actions';
 import './update-book.css';
 
 export class UpdateBook extends React.Component {

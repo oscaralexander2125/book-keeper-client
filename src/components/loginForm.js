@@ -61,7 +61,6 @@ export class LoginForm extends React.Component {
 
 const mapStateToProps = (state, props) => ({
   user: state.auth.currentUser,
-  auth: state.auth.authToken
 })
 
 export default reduxForm({

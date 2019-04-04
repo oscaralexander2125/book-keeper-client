@@ -1,7 +1,7 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import Input from './input';
-import {required, nonEmpty, isTrimmed, selectRequired} from '../validators';
+import {required, nonEmpty} from '../validators';
 import {connect} from 'react-redux';
 import {fetchAddBook} from '../actions';
 import './add-book-form.css';

@@ -1,6 +1,4 @@
 import {API_BASE_URL} from '../config';
-import {Redirect} from 'react-router-dom';
-import React from 'react';
 
 export const FETCH_REQUEST =  'FETCH_REQUEST';
 export const fetchRequest = () => ({
