@@ -64,9 +64,7 @@ const mapStateToProps = (state, props) => ({
   auth: state.auth.authToken
 })
 
-const loginComponent = reduxForm({
+export default reduxForm({
   form: 'login',
   onSubmitFail: (error, dispatch) => dispatch(focus('login', 'email'))
 })(connect(mapStateToProps)(LoginForm));
-
-export default loginComponent;
