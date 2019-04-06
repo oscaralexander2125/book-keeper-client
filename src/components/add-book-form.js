@@ -8,15 +8,12 @@ import './add-book-form.css';
 
 export class AddBook extends React.Component {
   onSubmit(values) {
-    console.log(values)
     this.props.dispatch(fetchAddBook(values))
     this.props.history.push(`/books/${values.status}`)
-    console.log(this.props.error)
-
   }
 
   render() {
-    let error
+    let error;
     if(this.props.error) {
       error = (
       <div className='form-error' aria-live='polite'>
@@ -86,7 +83,6 @@ export class AddBook extends React.Component {
 
 const bookComponent = reduxForm({
   form: 'add-book'
-  //onSubmit: (error, dispatch) => dispatch()
 })(connect()(AddBook));
 
 export default bookComponent;

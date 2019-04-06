@@ -12,19 +12,11 @@ export class UpdateBook extends React.Component {
     this.props.history.push(`/books/${bookStatus}`)
   }
 
-  componentDidMount() {
-    //console.log(this.props.updateBook)
-    //this.handleInitialize();
-  }
-
   load(book) {
-    /*const initData = {review:this.props.updateBook.review};
-    this.props.initialize(initData)*/
     this.props.initialize({review:book.review, status:book.status, public:book.public});
   }
 
   render() {
-
     let error
     if(this.props.error) {
       error = (
@@ -87,6 +79,5 @@ const mapStateToProps = (state, props) => ({
 })
 
 export default reduxForm({
-  form: 'update-book',
-
+  form: 'update-book'
 })(connect(mapStateToProps)(UpdateBook));

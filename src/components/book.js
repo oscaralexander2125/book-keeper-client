@@ -4,20 +4,18 @@ import {bookId, updateBook, fetchDeleteBook} from '../actions';
 import './book.css';
 
 export class Book extends React.Component {
-  updateBook(e) {
+  updateBook() {
     this.props.dispatch(updateBook(this.props))
     this.props.dispatch(bookId(this.props.id))
     return this.props.history.push('/books/update')
   }
 
   deleteBook(e) {
-    console.log(e.currentTarget.getAttribute('data-book-id'));
     const bookId = e.currentTarget.getAttribute('data-book-id');
     return this.props.dispatch(fetchDeleteBook(bookId))
   }
 
   render() {
-    console.log(this.props)
     let book;
     if (this.props.match.path === '/books/public') {
       book = 
@@ -44,7 +42,7 @@ export class Book extends React.Component {
           <p>
             Review: {this.props.review}
           </p>
-          <button className='book-button' onClick={(e) => this.updateBook(e)} > Update </button>
+          <button className='book-button' onClick={() => this.updateBook()} > Update </button>
           <button className='book-button' data-book-id={this.props.id} onClick={(e) => this.deleteBook(e)}> Delete </button>
         </div>
     }

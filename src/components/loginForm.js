@@ -23,7 +23,6 @@ export class LoginForm extends React.Component {
     }
 
     if(this.props.user) {
-      console.log(this.props.user)
       return <Redirect to='/books/read' />
     }
 

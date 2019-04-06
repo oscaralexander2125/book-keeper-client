@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="Ap">
+          <div className="App">
             <Switch>
               <Redirect exact from='/' to='sign-in' />
               <Route path='/sign-in' component={LoginPage} />

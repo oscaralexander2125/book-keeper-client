@@ -6,15 +6,11 @@ import './books.css'
 
 export class Books extends React.Component {
   componentDidMount() {
-    console.log(this.props.status)
     if(this.props.status === 'public') {
-      console.log('hi')
       return this.props.dispatch(fetchPublicBooks(this.props.status))
     } else {
-        console.log('books component in didmount method')
         return this.props.dispatch(fetchBooks(this.props.status))
-  
-    }
+      }
   }
 
   render() {
@@ -22,7 +18,7 @@ export class Books extends React.Component {
     if (this.props.loading) {
       return <p>Loading...</p>
     }
-    console.log(this.props)
+
     const bookList = this.props.books.map((book, index) => (
       <div key={index} className={`book-item-${index} books-items`}>
         <Book 

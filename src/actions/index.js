@@ -54,7 +54,6 @@ export const updateBook = (update) => ({
 })
 
 export const fetchBooks = (stage) => dispatch => {
-  //console.log(localStorage.Bearer)
   dispatch(fetchRequest())
   return fetch (`${API_BASE_URL}/api/books?status=${stage}`, {
     headers: {
