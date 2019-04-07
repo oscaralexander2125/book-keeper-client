@@ -18,6 +18,7 @@
   <li>React-router-dom</li>
   <li>Javascript</li>
   <li>CSS</li>
+  </ul>
   <h3>Backend</h3>
   <ul>
   <li>Node.js</li>
