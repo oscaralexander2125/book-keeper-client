@@ -18,7 +18,9 @@
   <li>Redux-form</li>
   <li>React-router-dom</li>
   <li>Javascript</li>
-  <li>CSS</li>
+  <li>CSS
+  <ul><li>Responsive grid design for mobile screens and tablets, as well.</li></ul>
+  </li>
   </ul>
   <h3>Backend</h3>
   <ul>
