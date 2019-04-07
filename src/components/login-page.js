@@ -13,6 +13,7 @@ export default function LoginPage() {
         <span className='navLink'><NavLink to = '/sign-in' className='pageSwitcher1'>Sign In</NavLink></span>
         <span className='navLink'><NavLink to = '/sign-up' className='pageSwitcher2'>Sign Up</NavLink></span>
       </div>
+      <div>demo <br /> email: test@test.com <br /> password: password1234</div>
       <Route exact path='/sign-in' render={(props) => <LoginForm {...props} />} />
       <Route exact path='/sign-up' render={(props) => <SignUpForm {...props} />} />
     </div>
