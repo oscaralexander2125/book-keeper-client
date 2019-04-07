@@ -12,7 +12,7 @@
   <h2>Technical Stack</h2>
   <h3>Front End</h3>
   <ul>
-  <li>React<li>
+  <li>React</li>
   <li>Redux</li>
   <li>Redux-form</li>
   <li>React-router-dom</li>
