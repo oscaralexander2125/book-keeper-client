@@ -25,3 +25,35 @@
   text-decoration: none;
   color: whitesmoke;
 }
+
+.about-wide {
+  display: none;
+  font-weight: bold;
+}
+
+.mobile-about {
+  max-width: 300px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+@media only screen and (min-width:720px) {
+  .about-wide {
+    display: inline;
+    width: 40%;
+    float: left;
+    margin-top: 200px;
+    margin-left: 50px;
+  }
+
+  .forms {
+    display: inline-block;
+    width: 48%;
+    position: relative;
+    right: 50px;
+  }
+
+  .mobile-about {
+    display: none;
+  }
+}
