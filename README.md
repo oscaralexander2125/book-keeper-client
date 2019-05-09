@@ -34,10 +34,7 @@
 
   <h2>Screenshots</h2>
   
-  ![](screenshots/Screenshot 2019-04-06 18.55.41.png)
-  ![](screenshots/Screenshot 2019-04-06 18.55.45.png)
-  ![](screenshots/Screenshot 2019-04-06 18.56.00.png)
-  ![](screenshots/Screenshot 2019-04-06 18.56.08.png)
-  ![](screenshots/Screenshot 2019-04-06 18.56.14.png)
-  ![](screenshots/Screenshot 2019-04-06 18.56.38.png)
-  ![](screenshots/Screenshot 2019-04-06 18.56.51.png)
+  ![](screenshots/login.png)
+  ![](screenshots/view.png)
+  ![](screenshots/mobile.png)
+  ![](screenshots/add.png)
