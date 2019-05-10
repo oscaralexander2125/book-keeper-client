@@ -114,7 +114,6 @@ export const fetchAddBook = (book) => dispatch => {
     return res.json();
   })
   .then(addedBook => {
-    console.log('success')
     dispatch(fetchSuccess())
     dispatch(addBook(addedBook))
   })
@@ -141,7 +140,6 @@ export const fetchUpdateBook = (update, id) => dispatch => {
   })
   .then(update => {
     dispatch(fetchSuccess())
-    console.log(update)
   })
   .catch(err => {
     console.log(err)
@@ -164,7 +162,6 @@ export const fetchDeleteBook = id => dispatch => {
     return res.json();
   })
   .then(deletedBook => {
-    console.log(deletedBook)
     dispatch(fetchSuccess())
     dispatch(deleteBook(deletedBook))
   })

@@ -51,7 +51,6 @@ export class UpdateBook extends React.Component {
                 component="input"
                 type="radio"
                 value="public"
-                //checked={this.props.book.public == 'public'}
               />{' '}
               Public
             </label>
@@ -61,7 +60,6 @@ export class UpdateBook extends React.Component {
                 component="input"
                 type="radio"
                 value="private"
-                //checked={this.props.book.public == 'private'}
               />{' '}
               Private
             </label>
